@@ -116,6 +116,10 @@ sh lats.sh
 - ``--n_evaluate_sample``: number of times to prompt for state evaluation
 - ``--iterations``: maximum number of trajectories to sample
 
+### Decision-making (FrozenLake)
+
+Setup and runner live in `frozenlake/`. Use Gym's `FrozenLake-v1` environment. Prompts and custom maps will be placed under `frozenlake/prompts/` and `frozenlake/data/`.
+
 ## Trajectories
 ``programming/root/`` contains all the trajectories from the paper's experiments on programming. Please use get_acc.py with the log path to get the actual accuracy. HotPotQA and WebShop logs were too large to upload, feel free to email if interested.
 
