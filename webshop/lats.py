@@ -8,23 +8,19 @@
 
 import os
 import openai
-import backoff
-import sys
 import copy
-import itertools
 import numpy as np
 from functools import partial
 from models import gpt
 import requests
 import logging
 import random
+from bs4 import BeautifulSoup
+from bs4.element import Comment
  
 completion_tokens = prompt_tokens = 0
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
-import requests
-from bs4 import BeautifulSoup
-from bs4.element import Comment
 
 WEBSHOP_URL = "http://127.0.0.1:5000"
 ACTION_TO_TEMPLATE = {
@@ -186,7 +182,7 @@ class webshopEnv:
           assert 'option_types' in self.sessions[session]
           assert button in self.sessions[session]['option_types'], (button, self.sessions[session]['option_types'])  # must be options
           option_type = self.sessions[session]['option_types'][button]
-          if not 'options' in self.sessions[session]:
+          if 'options' not in self.sessions[session]:
             self.sessions[session]['options'] = {}
           self.sessions[session]['options'][option_type] = button
           observation_ = f'You have clicked {button}.'
@@ -214,7 +210,6 @@ reflection_map = []
 failed_trajectories = []
 
 
-import numpy as np
 
 def softmax(x, temperature=1.0):
     e_x = np.exp((x - np.max(x)) / temperature)

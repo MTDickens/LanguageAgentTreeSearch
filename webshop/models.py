@@ -1,11 +1,9 @@
 import os
 import openai
 import backoff 
-from transformers import GPT2Tokenizer
 
 completion_tokens = prompt_tokens = 0
 MAX_TOKENS = 15000
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2-medium')
 
 api_key = os.getenv("OPENAI_API_KEY", "")
 if api_key != "":

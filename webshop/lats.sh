@@ -1,3 +1,6 @@
+export OPENAI_API_KEY=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
+export OPENAI_API_BASE=https://openrouter.ai/api/v1
+
 python run.py \
     --backend gpt-3.5-turbo \
     --task_start_index 0 \
