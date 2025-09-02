@@ -47,7 +47,7 @@ def run(args):
 
 def parse_args():
     args = argparse.ArgumentParser()
-    args.add_argument('--backend', type=str, choices=['gpt-4', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-0613'], default='gpt-3.5-turbo-0613')
+    args.add_argument('--backend', type=str, choices=['gpt-4', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-0613', 'qwen/qwen-2.5-vl-7b-instruct'], default='gpt-3.5-turbo-0613')
     args.add_argument('--temperature', type=float, default=1.0)
     args.add_argument('--task_start_index', type=int, default=900)
     args.add_argument('--task_end_index', type=int, default=1000)

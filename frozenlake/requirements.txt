@@ -1,0 +1,7 @@
+gym==0.26.2
+numpy
+transformers
+openai
+backoff
+requests
+beautifulsoup4
